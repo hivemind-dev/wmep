@@ -1,0 +1,40 @@
+// =============================================================
+// .module-panel — base shell every wMEP module view renders.
+// =============================================================
+
+@layer components {
+  .module-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    & + & {
+      margin-top: 16px;
+    }
+
+    &-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    &-title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    &-subtitle {
+      font-size: 11px;
+      color: var(--text-faint);
+      font-family: var(--mono);
+    }
+  }
+}

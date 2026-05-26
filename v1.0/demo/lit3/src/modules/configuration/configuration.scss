@@ -1,0 +1,44 @@
+// =============================================================
+// @demo/configuration — module-owned styles
+// Imported by configuration.view.ts.
+// =============================================================
+
+@use "../../styles/mixins" as m;
+
+@layer modules {
+  .configuration-panel {
+    .config-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+
+  .config-label {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .config-input {
+    @include m.field-input;
+    padding: 4px 8px;
+    width: 180px;
+  }
+
+  .config-section-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-faint);
+    margin-top: 8px;
+    @include m.section-divider-top(8px);
+  }
+
+  .config-actions {
+    display: flex;
+    justify-content: flex-end;
+    @include m.section-divider-top(8px);
+  }
+}

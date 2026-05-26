@@ -1,0 +1,78 @@
+// =============================================================
+// Generic .btn utility — used everywhere.
+// Variants: size (.btn-sm, .btn-xs), color (.btn-green, .btn-red,
+// .btn-gray), and ghost (.btn-ghost).
+// =============================================================
+
+@layer utilities {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    background: var(--accent);
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    white-space: nowrap;
+
+    &:hover {
+      background: var(--accent-hover);
+    }
+
+    &-sm {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+
+    &-xs {
+      padding: 2px 6px;
+      font-size: 11px;
+    }
+
+    &-green {
+      background: var(--green);
+
+      &:hover {
+        background: var(--green-hover);
+      }
+    }
+
+    &-red {
+      background: var(--red);
+
+      &:hover {
+        background: var(--red-hover);
+      }
+    }
+
+    &-gray {
+      background: var(--gray);
+
+      &:hover {
+        background: var(--gray-hover);
+      }
+    }
+
+    &-ghost {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+
+      &:hover {
+        background: var(--surface-alt);
+        border-color: var(--border-strong);
+      }
+
+      &.is-active {
+        background: var(--accent-soft);
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+    }
+  }
+}

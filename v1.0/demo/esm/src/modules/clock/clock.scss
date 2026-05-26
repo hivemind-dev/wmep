@@ -1,0 +1,26 @@
+// =============================================================
+// @demo/clock — module-owned styles
+// Imported by clock.view.ts.
+// =============================================================
+
+@use "../../styles/mixins" as m;
+
+@layer modules {
+  .clock-panel {
+    .clock-display {
+      @include m.display-area;
+    }
+  }
+
+  .clock-time {
+    @include m.numeric-display(48px, 600);
+  }
+
+  .clock-meta {
+    @include m.caption-mono;
+  }
+
+  .clock-controls {
+    @include m.button-row;
+  }
+}

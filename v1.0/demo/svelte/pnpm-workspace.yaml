@@ -1,0 +1,8 @@
+allowBuilds:
+  "@parcel/watcher": true
+  esbuild: true
+minimumReleaseAgeExclude:
+  - "@types/node@25.9.1"
+  - typescript@6.0.3
+  - svelte@5.55.8
+  - "@sveltejs/vite-plugin-svelte@7.1.1"

@@ -1,0 +1,73 @@
+// =============================================================
+// Reusable SCSS mixins — used by modules to avoid duplication.
+// Consumed via:  @use "../../styles/mixins" as m;  then  @include m.<name>;
+// =============================================================
+
+// Centered display area used by Clock and Counter to host a big numeral.
+@mixin display-area {
+  text-align: center;
+  padding: 16px 0;
+}
+
+// Big tabular numeral. Pass desired font-size + weight.
+@mixin numeric-display($size, $weight: 600) {
+  font-family: var(--mono);
+  font-size: $size;
+  font-weight: $weight;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+// Small monospace caption (clock-meta, counter-source).
+@mixin caption-mono {
+  font-size: 11px;
+  color: var(--text-faint);
+  font-family: var(--mono);
+  margin-top: 8px;
+}
+
+// Horizontal toolbar row of buttons, centered and wrap-friendly.
+@mixin button-row($gap: 8px, $justify: center) {
+  display: flex;
+  justify-content: $justify;
+  gap: $gap;
+  flex-wrap: wrap;
+}
+
+// Bordered, focusable text input (notes, configuration).
+@mixin field-input {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  background: var(--surface);
+  color: var(--text);
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-soft);
+  }
+}
+
+// Standalone focus ring (when applied to a non-input element).
+@mixin focus-ring {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+// Horizontal divider above an element (top-border + spacing).
+@mixin section-divider-top($pad: 8px) {
+  padding-top: $pad;
+  border-top: 1px solid var(--border);
+}
+
+// Empty-state message (centered, italic, faint).
+@mixin empty-state($pad: 16px, $size: 12px) {
+  padding: $pad;
+  text-align: center;
+  color: var(--text-faint);
+  font-style: italic;
+  font-size: $size;
+}

@@ -1,0 +1,14 @@
+// =============================================================
+// Cascade @layer order — declared once, controls override priority.
+// Lower in the list = higher precedence.
+//
+//   reset       universal box-sizing + element resets
+//   tokens      CSS custom properties (light/dark)
+//   base        element-level styles (body, button, code, ...)
+//   utilities   atomic helpers (.btn, .btn-ghost, ...)
+//   components  shared components (.module-panel)
+//   modules     wMEP module-owned styles (clock, counter, ...)
+//   host        host-only widgets in src/app (page.tsx)
+// =============================================================
+
+@layer reset, tokens, base, utilities, components, modules, host;

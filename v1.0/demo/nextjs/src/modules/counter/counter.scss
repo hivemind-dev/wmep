@@ -1,0 +1,31 @@
+// =============================================================
+// @demo/counter — module-owned styles
+// Imported by counter.view.tsx.
+// =============================================================
+
+@use "../../styles/mixins" as m;
+
+@layer modules {
+  .counter-panel {
+    .counter-display {
+      @include m.display-area;
+    }
+  }
+
+  .counter-value {
+    @include m.numeric-display(56px, 700);
+  }
+
+  .counter-source {
+    @include m.caption-mono;
+  }
+
+  .counter-buttons,
+  .counter-extra-buttons {
+    @include m.button-row;
+  }
+
+  .counter-extra-buttons {
+    @include m.section-divider-top(8px);
+  }
+}

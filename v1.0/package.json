@@ -1,0 +1,90 @@
+{
+  "name": "@aurorah/wmep",
+  "version": "1.0.0",
+  "description": "Web Module Export Protocol (wMEP) — file/module-level micro-protocol for wMCP. One typed interface per module is the only export across module boundaries.",
+  "type": "module",
+  "main": "./dist/core/index.js",
+  "types": "./dist/core/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/core/index.js",
+      "types": "./dist/core/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "example:counter": "npx tsx examples/counter/host-app.ts",
+    "example:dashboard": "npx tsx examples/analytics-dashboard/host-app.ts",
+    "example:file-manager": "npx tsx examples/file-manager/host-app.ts",
+    "example:kanban": "npx tsx examples/kanban-board/host-app.ts",
+    "example:player": "npx tsx examples/media-player/host-app.ts",
+    "example:editor": "npx tsx examples/rich-text-editor/host-app.ts",
+    "example:orchestration": "npx tsx examples/orchestration-host-app.ts",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,json}\" \"examples/**/*.{ts,tsx,js,json}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,json}\" \"examples/**/*.{ts,tsx,js,json}\""
+  },
+  "keywords": [
+    "wmep",
+    "web-module-export-protocol",
+    "module-protocol",
+    "typescript-interface",
+    "encapsulation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/z-order/wmep.git"
+  },
+  "homepage": "https://github.com/z-order/wmep#readme",
+  "ai": {
+    "important": "wMEP is the file/module-level micro-protocol of wMCP. Each module exports exactly one TypeScript interface from its *.wmep.ts boundary file. Outside code may import only from *.wmep.ts files. Inside a module, normal export/import is free.",
+    "wmcp": "https://github.com/z-order/wmcp",
+    "examples": {
+      "root": "https://github.com/z-order/wmep/tree/main/examples",
+      "counter": "https://github.com/z-order/wmep/tree/main/examples/counter",
+      "analytics-dashboard": "https://github.com/z-order/wmep/tree/main/examples/analytics-dashboard",
+      "file-manager": "https://github.com/z-order/wmep/tree/main/examples/file-manager",
+      "kanban-board": "https://github.com/z-order/wmep/tree/main/examples/kanban-board",
+      "media-player": "https://github.com/z-order/wmep/tree/main/examples/media-player",
+      "rich-text-editor": "https://github.com/z-order/wmep/tree/main/examples/rich-text-editor"
+    },
+    "demos": {
+      "root": "https://github.com/z-order/wmep/tree/main/demo",
+      "esm": "https://github.com/z-order/wmep/tree/main/demo/esm",
+      "lit3": "https://github.com/z-order/wmep/tree/main/demo/lit3",
+      "nextjs": "https://github.com/z-order/wmep/tree/main/demo/nextjs",
+      "svelte": "https://github.com/z-order/wmep/tree/main/demo/svelte"
+    }
+  },
+  "wmep": {
+    "spec": "wMEP — Web Module Export Protocol",
+    "specUrl": "https://github.com/z-order/wmep",
+    "projectStructure": {
+      "src/": "The project sources.",
+      "src/lib/": "The project libraries.",
+      "src/modules/": "The project modules that use the wMEP spec.",
+      "src/styles/": "Global styles for theme and components."
+    },
+    "moduleStructure": {
+      "moduleName": "A directory name under src/modules/ is the module name.",
+      "files": {
+        "{module-name}.rule.md": "The module description, canonical rules, provisions.",
+        "{module-name}.ts": "The internal implementation of the module that calls createWmepModule().",
+        "{module-name}.scss": "SCSS for the module.",
+        "{module-name}.view.{ts|tsx|svelte|...}": "UI/UX for the module.",
+        "{module-name}.wmep.ts": "wMEP specification for the module.",
+        "...": "And other files for the module."
+      }
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "prettier": "^3.8.3",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3"
+  }
+}

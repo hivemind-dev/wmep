@@ -1,0 +1,22 @@
+// =============================================================
+// wMEP Modular Demo (ESM) — globals entry
+// -------------------------------------------------------------
+// Composes the foundation layer of the stylesheet:
+//
+//   1) @layer order  — defines cascade priority
+//   2) tokens        — design tokens (CSS custom properties)
+//   3) reset         — universal reset + base element styles
+//   4) buttons       — generic .btn utility
+//   5) panel         — generic .module-panel component
+//
+// Module-specific styles live next to each module (e.g.
+// src/modules/counter/counter.scss) and are imported by that
+// module's view file. Host-side widgets defined inside
+// src/main.ts are styled in src/styles/page.scss.
+// =============================================================
+
+@use "./layers";
+@use "./tokens";
+@use "./reset";
+@use "./buttons";
+@use "./panel";
